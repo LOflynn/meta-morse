@@ -1,0 +1,48 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835", "brcm,bcm2836", "brcm,bcm2708", "brcm,bcm2709", "brcm,bcm2711";
+
+	fragment@0 {
+		target = <&gpio>;
+		__overlay__ {
+			status = "okay";
+
+			gpio_mm_ps: gpio_mm_ps {
+				mm-async-wakeup7-high {
+					pins = "gpio7";
+					function = "gpio_in";
+					bias-pull-down;
+					output-high;
+				};
+			};
+
+			gpio_mm_reset: gpio_mm_reset {
+				mm-reset5-float {
+					pins = "gpio5";
+					function = "gpio_in";
+					bias-disable;
+					output-high;
+				};
+			};
+
+			 gpio_mm_jtag: gpio_mm_jtag {
+				jtag-reset4-low {
+					pins = "gpio4";
+					function = "gpio_out";
+					bias-pull-low;
+					output-low;
+				};
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&leds>;
+		__overlay__ {
+			pinctrl-names = "default";
+			pinctrl-0 = <&gpio_mm_ps &gpio_mm_reset &gpio_mm_jtag>;
+		};
+	};
+};
