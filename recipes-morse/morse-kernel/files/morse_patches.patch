@@ -1303,17 +1303,14 @@ index 00ed7c17698d..b8fd0787ddbe 100644
  
  /* BACK (block-ack) parties */
 diff --git a/include/linux/mmc/card.h b/include/linux/mmc/card.h
-index 0557b0e5c42c..d53f081ba559 100644
+index 0557b0e5c42c..c3a978ab7a7a 100644
 --- a/include/linux/mmc/card.h
 +++ b/include/linux/mmc/card.h
-@@ -292,7 +292,9 @@ struct mmc_card {
- #define MMC_QUIRK_BROKEN_IRQ_POLLING	(1<<11)	/* Polling SDIO_CCCR_INTx could create a fake interrupt */
+@@ -293,6 +293,7 @@ struct mmc_card {
  #define MMC_QUIRK_TRIM_BROKEN	(1<<12)		/* Skip trim */
  #define MMC_QUIRK_BROKEN_HPI	(1<<13)		/* Disable broken HPI support */
--#define MMC_QUIRK_BROKEN_SD_DISCARD	(1<<14)	/* Disable broken SD discard support */
-+#define MMC_QUIRK_NO_18V	(1<<14)		/* Ignore voltage negotiation and don't use 1.8v */
-+
-+//#define MMC_QUIRK_BROKEN_SD_DISCARD	(1<<14)	/* Disable broken SD discard support */
+ #define MMC_QUIRK_BROKEN_SD_DISCARD	(1<<14)	/* Disable broken SD discard support */
++#define MMC_QUIRK_NO_18V	(1<<15)		/* Ignore voltage negotiation and don't use 1.8v */
  
  #define MMC_QUIRK_ERASE_BROKEN	(1<<31)		/* Skip erase */
  

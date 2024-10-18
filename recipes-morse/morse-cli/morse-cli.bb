@@ -1,9 +1,8 @@
 SUMMARY = "morse_cli"
-DESCRIPTION = "morse_cli description"
-HOMEPAGE = "https://myapp.example.com"
 
-SRC_URI = "git:///home/Lewis.OFlynn/src/morse_cli/;protocol=file;branch=main"
-SRCREV = "5dd8644208091b5fad14516649409e7efe63a204"
+TAG_NAME = "1.12.4"
+PV = "${TAG_NAME}+git${SRCPV}"
+SRC_URI = "git://github.com/MorseMicro/morse_cli.git;protocol=https;branch=main;tag=${TAG_NAME}"
 
 LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://LICENSING;md5=fb9bb67f7333939b51bb986dc3a6cdd1"
@@ -13,7 +12,7 @@ inherit autotools
 DEPENDS += "libnl"
 RDEPENDS_${PN} += "libnl"
 
-CFLAGS:append = " -I${STAGING_INCDIR}/libnl3/"
+CFLAGS:append = " -I${STAGING_INCDIR}/libnl3/ -Wno-unused-result"
 LDFLAGS:append = " -L${STAGING_LIBDIR}/ -lnl-3 -lnl-genl-3"
 
 S = "${WORKDIR}/git"
