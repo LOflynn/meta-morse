@@ -14,10 +14,11 @@ SRC_URI[bcf.sha256sum] = "e403764730aa149e78874135da154bab2a24574308d3f2df88c9b4
 S = "${WORKDIR}"
 
 do_install() {
-	install -d ${D}/lib/firmware/morse/
-	install -m 0644 ${S}/lib/firmware/morse/bcf_mf08551.bin ${D}/lib/firmware/morse/bcf_default.bin
-	install -m 0644 ${S}/lib/firmware/morse/mm6108.bin ${D}/lib/firmware/morse/mm6108.bin
+	install -d ${D}/lib/firmware/
+	install -m 0644 ${S}/lib/firmware/morse/mm6108.bin ${D}/lib/firmware/mm6108.bin
+	install -m 0644 ${S}/lib/firmware/morse/bcf_mf08651_us.bin ${D}/lib/firmware/bcf_mf08651_us.bin
+	ln -s -r ${D}/lib/firmware/bcf_mf08651_us.bin ${D}/lib/firmware/bcf_default.bin
 }
 
-FILES:${PN} += "/lib/firmware/morse/*"
+FILES:${PN} += "/lib/firmware/bcf_mf08651_us.bin /lib/firmware/mm6108.bin /lib/firmware/bcf_default.bin"
 INSANE_SKIP:${PN} = "arch"
