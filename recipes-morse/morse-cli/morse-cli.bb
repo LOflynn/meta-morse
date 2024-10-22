@@ -12,7 +12,8 @@ inherit autotools
 DEPENDS += "libnl"
 RDEPENDS_${PN} += "libnl"
 
-CFLAGS:append = " -I${STAGING_INCDIR}/libnl3/ -Wno-unused-result"       # Ignore warning due to bug in source code
+# Ignore warning due to bug in c code (temp)
+CFLAGS:append = " -I${STAGING_INCDIR}/libnl3/ -Wno-unused-result"      
 LDFLAGS:append = " -L${STAGING_LIBDIR}/ -lnl-3 -lnl-genl-3"
 
 S = "${WORKDIR}/git"

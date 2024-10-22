@@ -26,5 +26,8 @@ do_install() {
     	echo "options morse bcf=/lib/firmware/${BCF_FILENAME}" >> ${D}${sysconfdir}/modprobe.d/morse.conf
 }
 
+# Ignore warning about firmware not being ARM
+INSANE_SKIP:${PN} = "arch"
 FILES:${PN} += "/lib/firmware/${BCF_FILENAME} /lib/firmware/mm6108.bin"
-INSANE_SKIP:${PN} = "arch"														# Skip warning about firmware no being ARM 
+
+
