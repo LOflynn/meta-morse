@@ -24,6 +24,6 @@ do_compile() {
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 morse_cli ${D}${bindir}/morse_cli           # -, not _
+    install -m 0755 morse_cli ${D}${bindir}/morse_cli
 }
 
