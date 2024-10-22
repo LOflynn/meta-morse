@@ -1,4 +1,4 @@
-SUMMARY = "morse_cli"
+DESCRIPTION = "Build and install Morse Command Line"
 
 TAG_NAME = "1.12.4"
 PV = "${TAG_NAME}+git${SRCPV}"
@@ -12,7 +12,7 @@ inherit autotools
 DEPENDS += "libnl"
 RDEPENDS_${PN} += "libnl"
 
-CFLAGS:append = " -I${STAGING_INCDIR}/libnl3/ -Wno-unused-result"
+CFLAGS:append = " -I${STAGING_INCDIR}/libnl3/ -Wno-unused-result"       # Ignore warning due to bug in source code
 LDFLAGS:append = " -L${STAGING_LIBDIR}/ -lnl-3 -lnl-genl-3"
 
 S = "${WORKDIR}/git"

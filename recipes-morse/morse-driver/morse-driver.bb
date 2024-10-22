@@ -1,4 +1,4 @@
-SUMMARY = "morse_driver"
+DESCRIPTION = "Build and install the morse driver"
 
 TAG_NAME = "1.12.4"
 PV = "${TAG_NAME}+git${SRCPV}"

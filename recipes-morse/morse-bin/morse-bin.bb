@@ -1,4 +1,3 @@
-SUMMARY = "Morse Binaries"
 DESCRIPTION = "Deploy the firmware and Board Configuration File binaries"
 LICENSE="CLOSED"
 
@@ -28,4 +27,4 @@ do_install() {
 }
 
 FILES:${PN} += "/lib/firmware/${BCF_FILENAME} /lib/firmware/mm6108.bin"
-INSANE_SKIP:${PN} = "arch"
+INSANE_SKIP:${PN} = "arch"														# Skip warning about firmware no being ARM 

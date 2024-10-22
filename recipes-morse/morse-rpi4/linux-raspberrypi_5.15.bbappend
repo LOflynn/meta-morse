@@ -1,3 +1,4 @@
+DESCRIPTION = "Append kernel recipe to add patches and build device tree overlays"
 
 inherit kernel-devicetree
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"

@@ -1,4 +1,4 @@
-SUMMARY = "hostapd_s1g"
+DESCRIPTION = "Build and install Sub-One GHz Hostapd"
 
 TAG_NAME = "1.12.4"
 PV = "${TAG_NAME}+git${SRCPV}"
