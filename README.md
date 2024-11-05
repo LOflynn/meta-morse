@@ -54,7 +54,6 @@ BBLAYERS ?= " \
   ${TOPDIR}/../sources/meta-openembedded/meta-multimedia \
   ${TOPDIR}/../sources/meta-openembedded/meta-networking \
   ${TOPDIR}/../sources/meta-openembedded/meta-python \
-  ${TOPDIR}/../sources/meta-morse \
   "
 ```
 You can now create the image with ```bitbake core-image-base```. This may take several hours. Note that there are some required wireless networking dependencies that are built in ```core-image-base``` that aren't in ```core-image-minimal```. I have not yet picked apart exactly what they are, so I stuck with ```core-image-base```.
